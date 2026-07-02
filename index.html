@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Myunghyun Song</title>
+<style>
+  :root { --ink:#222; --muted:#666; --link:#2a5db0; --rule:#e6e6e6; }
+  * { box-sizing:border-box; }
+  body {
+    font-family: Arial, Helvetica, "Segoe UI", sans-serif;
+    color:var(--ink); line-height:1.65; margin:0; background:#fff;
+    font-size:16px;
+  }
+  .wrap { max-width:760px; margin:0 auto; padding:56px 24px 96px; }
+  .head { text-align:center; }
+  .head img {
+    width:180px; height:180px; object-fit:cover;
+    border-radius:4px; margin-bottom:18px;
+  }
+  h1 { font-size:2rem; font-weight:700; margin:0 0 20px; }
+  .intro { max-width:640px; margin:0 auto; }
+  .intro p { margin:0 0 16px; }
+  .contact { margin:18px 0 6px; }
+  .links a { color:var(--link); text-decoration:none; }
+  .links a:hover { text-decoration:underline; }
+  h2 {
+    font-size:1.35rem; font-weight:700; margin:44px 0 6px;
+    padding-bottom:8px; border-bottom:1px solid var(--rule);
+  }
+  .paper { margin:18px 0; }
+  .paper .title { font-weight:700; }
+  .paper .meta { color:var(--muted); font-size:.95rem; margin-top:2px; }
+  .paper a { color:var(--link); text-decoration:none; }
+  .paper a:hover { text-decoration:underline; }
+  .abstract { margin-top:6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="head">
+    <!-- Replace with your headshot: put the file in an images/ folder in the repo -->
+    <img src="images/headshot.jpg" alt="Myunghyun Song">
+    <h1>Myunghyun Song</h1>
+  </div>
+
+  <div class="intro">
+    <p>
+      I am a Ph.D. candidate in Economics at <em>[Your University]</em>.
+      I study econometric theory and causal inference, with a focus on
+      instrumental-variable designs and treatment-effect heterogeneity across
+      multiple margins.
+    </p>
+    <p class="contact">Email: thdaudgus280 at gmail dot com</p>
+    <p class="links">
+      <a href="files/CV.pdf">CV</a> |
+      <a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a>
+    </p>
+  </div>
+
+  <h2>Working Papers</h2>
+
+  <div class="paper">
+    <div class="title">Judge IV Designs with Multiple Treatments and Instruments</div>
+    <div class="meta">Job market paper &middot; <a href="files/jmp.pdf">PDF</a></div>
+    <p class="abstract">
+      A two-step framework for estimating margin-specific treatment effects in
+      judge-IV designs with more than two treatments: a semiparametric first stage
+      that recovers judge-index instruments without restricting the error
+      distribution, and a varying-coefficient second stage that corrects for selection.
+    </p>
+  </div>
+
+  <h2>Publications</h2>
+
+  <div class="paper">
+    <div class="title">[Publication title]</div>
+    <div class="meta">[Journal, Year] &middot; with [coauthors] &middot; <a href="#">link</a></div>
+  </div>
+
+</div>
+</body>
+</html>
