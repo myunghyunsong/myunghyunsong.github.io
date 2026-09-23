@@ -3,82 +3,131 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Myunghyun Song</title>
+<meta name="description" content="Academic personal homepage for Myunghyun Song at Columbia University.">
+<title>Myunghyun Song | Columbia University</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
 <style>
-  :root { --ink:#222; --muted:#666; --link:#2a5db0; --rule:#e6e6e6; }
+  :root {
+    --bg:#ffffff; --text:#5a5a5a; --head:#222222; --muted:#8a8a8a;
+    --link:#267cb9; --rule:#e5e5e5; --btn:#f4f4f4;
+  }
+  :root[data-theme="dark"] {
+    --bg:#1e1f21; --text:#c9c9c9; --head:#eeeeee; --muted:#9a9a9a;
+    --link:#6aaee0; --rule:#3a3b3d; --btn:#2c2d30;
+  }
   * { box-sizing:border-box; }
+  html { background:var(--bg); }
   body {
-    font-family: Arial, Helvetica, "Segoe UI", sans-serif;
-    color:var(--ink); line-height:1.65; margin:0; background:#fff;
-    font-size:16px;
+    margin:0; background:var(--bg); color:var(--text);
+    font:15.5px/1.6 "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
-  .wrap { max-width:760px; margin:0 auto; padding:56px 24px 96px; }
-  .head { text-align:center; }
-  .head img {
-    width:180px; height:180px; object-fit:cover;
-    border-radius:4px; margin-bottom:18px;
+  a { color:var(--link); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  a:focus-visible, button:focus-visible { outline:2px solid var(--link); outline-offset:2px; }
+
+  .wrapper { max-width:1040px; margin:0 auto; padding:56px 32px 96px; display:flex; gap:56px; align-items:flex-start; }
+
+  header {
+    flex:0 0 250px; position:sticky; top:56px; text-align:center;
   }
-  h1 { font-size:2rem; font-weight:700; margin:0 0 20px; }
-  .intro { max-width:640px; margin:0 auto; }
-  .intro p { margin:0 0 16px; }
-  .contact { margin:18px 0 6px; }
-  .links a { color:var(--link); text-decoration:none; }
-  .links a:hover { text-decoration:underline; }
+  header img {
+    width:170px; height:auto; aspect-ratio:4/5; object-fit:cover;
+    border-radius:6px; display:block; margin:0 auto 18px;
+  }
+  header h1 { color:var(--head); font-size:1.75rem; font-weight:700; margin:0 0 8px; line-height:1.2; }
+  header .position { margin:0; line-height:1.55; }
+  header .email { margin:6px 0 0; }
+  header .icons { margin:14px 0 0; font-size:1.45rem; }
+  header .icons a { color:var(--head); margin:0 7px; }
+  header .icons a:hover { color:var(--link); text-decoration:none; }
+  .theme-toggle { margin-top:16px; font-size:.9rem; }
+  .theme-toggle button {
+    font:inherit; background:none; border:0; padding:0 4px; cursor:pointer; color:var(--muted);
+  }
+  .theme-toggle button[aria-pressed="true"] { color:var(--head); font-weight:700; }
+
+  main { flex:1 1 auto; min-width:0; }
+  main > p:first-child { margin-top:0; }
   h2 {
-    font-size:1.35rem; font-weight:700; margin:44px 0 6px;
-    padding-bottom:8px; border-bottom:1px solid var(--rule);
+    color:var(--head); font-size:1.4rem; font-weight:700;
+    margin:40px 0 4px; padding-bottom:6px; border-bottom:1px solid var(--rule);
   }
-  .paper { margin:18px 0; }
-  .paper .title { font-weight:700; }
-  .paper .meta { color:var(--muted); font-size:.95rem; margin-top:2px; }
-  .paper a { color:var(--link); text-decoration:none; }
-  .paper a:hover { text-decoration:underline; }
-  .abstract { margin-top:6px; }
+  .paper { margin:20px 0 26px; }
+  .paper h3 { color:var(--head); font-size:1.08rem; font-weight:700; margin:0 0 4px; line-height:1.4; }
+  .paper h3 a { color:var(--head); }
+  .paper h3 a:hover { color:var(--link); }
+  .paper .meta { margin:2px 0; }
+  .paper .links { margin:6px 0 0; }
+  .paper .links a {
+    display:inline-block; font-size:.85rem; padding:1px 9px; margin-right:6px;
+    border:1px solid var(--rule); border-radius:4px; background:var(--btn);
+  }
+  .paper .links a:hover { text-decoration:none; border-color:var(--link); }
+  .abstract { margin:8px 0 0; }
+  .abstract summary {
+    display:inline-block; cursor:pointer; list-style:none; color:var(--link);
+    font-size:.85rem; padding:1px 9px; border:1px solid var(--rule); border-radius:4px; background:var(--btn);
+  }
+  .abstract summary::-webkit-details-marker { display:none; }
+  .abstract summary::before { content:"\25B8"; display:inline-block; margin-right:5px; }
+  .abstract[open] summary::before { content:"\25BE"; }
+  .abstract summary:hover { border-color:var(--link); }
+  .abstract p { margin:10px 0 0; }
+
+  @media (max-width:880px) {
+    .wrapper { display:block; padding:36px 20px 72px; }
+    header { position:static; margin-bottom:32px; }
+  }
 </style>
+<script>
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem("theme"); } catch (e) {}
+    if (!t) t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
 </head>
 <body>
-<div class="wrap">
+<div class="wrapper">
 
-  <div class="head">
+  <header>
     <img src="images/headshot.jpg" alt="Myunghyun Song">
     <h1>Myunghyun Song</h1>
-  </div>
+    <p class="position">Ph.D. Candidate<br><a href="https://econ.columbia.edu/">Columbia University</a></p>
+    <p class="email">ms6347 at columbia dot edu</p>
+    <p class="icons">
+      <a href="https://scholar.google.com/citations?user=B1pVdR8AAAAJ&amp;hl=en" title="Google Scholar" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+      <a href="files/CV_Myunghyun.pdf" title="CV" aria-label="CV"><i class="ai ai-cv"></i></a>
+    </p>
+    <div class="theme-toggle">
+      <button type="button" data-set="dark">Dark</button>
+      <button type="button" data-set="light">Light</button>
+    </div>
+  </header>
 
-  <div class="intro">
+  <main>
     <p>
-      I am a Ph.D. candidate in Economics at </em>Columbia University</em>.
+      I am a Ph.D. candidate in Economics at <em>Columbia University</em>.
       My research interests lie in causal inference, nonparametric and semiparametric methods, and computational econometrics.
     </p>
-    <p class="contact">Email: ms6347 at columbia dot edu</p>
-    <p class="links">
-      <a href="files/CV_Myunghyun.pdf">CV</a> |
-      <a href="https://scholar.google.com/citations?user=B1pVdR8AAAAJ&hl=en">Google Scholar</a>
-    </p>
-  </div>
+    <p><strong>I will be on the 2026-2027 job market.</strong></p>
+    <p>My CV is linked <a href="files/CV_Myunghyun.pdf">here</a>.</p>
 
-  <h2>Working Papers</h2>
-  
-  <div class="paper">
-    <div class="title">Judge IV Designs with Multiple Treatments and Instruments</div> <div class="meta">Job market paper</div>
-    <div class="abstract">
-      <p>
-        <p><strong>Abstract.</strong> This paper proposes a two-stage procedure for judge instrumental variable (IV) designs with multiple treatments, estimating the effect of one treatment against another on the cases at the margin of the two. The first stage is an unordered treatment assignment model in which each latent index is a linear function of the observed case characteristics with judge-specific coefficients, plus an unobserved component. The judge-specific coefficients and the propensity for each treatment are identified without specifying the distribution of the unobserved components. We estimate the coefficients and the propensity jointly by sieve maximum likelihood, which is semiparametrically efficient for the coefficients. The estimates construct the regressors of the second stage, where the mean potential outcome of either treatment at the margin is recovered from one regression and its derivative in that treatment's propensity at a fixed index relative to the third treatment. Empirically calibrated Monte Carlo experiments show that the first stage is nearly as precise as a correctly specified parametric benchmark and remains accurate where that benchmark fails. Revisiting a judge IV study of recidivism in Virginia court records, we find that a noncarceral conviction raises reoffending by less than has been reported and incarceration raises it by at least as much as a noncarceral conviction does, almost entirely in carceral form and broadly across case characteristics.
-      </p>
+    <h2>Job Market Paper</h2>
+
+    <div class="paper">
+      <h3>Judge IV Designs with Multiple Treatments and Instruments</h3>
+      <details class="abstract">
+        <summary>Abstract</summary>
+        <p>This paper proposes a two-stage procedure for judge instrumental variable (IV) designs with multiple treatments, estimating the effect of one treatment against another on the cases at the margin of the two. The first stage is an unordered treatment assignment model in which each latent index is a linear function of the observed case characteristics with judge-specific coefficients, plus an unobserved component. The judge-specific coefficients and the propensity for each treatment are identified without specifying the distribution of the unobserved components. We estimate the coefficients and the propensity jointly by sieve maximum likelihood, which is semiparametrically efficient for the coefficients. The estimates construct the regressors of the second stage, where the mean potential outcome of either treatment at the margin is recovered from one regression and its derivative in that treatment's propensity at a fixed index relative to the third treatment. Empirically calibrated Monte Carlo experiments show that the first stage is nearly as precise as a correctly specified parametric benchmark and remains accurate where that benchmark fails. Revisiting a judge IV study of recidivism in Virginia court records, we find that a noncarceral conviction raises reoffending by less than has been reported and incarceration raises it by at least as much as a noncarceral conviction does, almost entirely in carceral form and broadly across case characteristics.</p>
+      </details>
     </div>
 
-  <div class="paper">
-    <div class="title">Identification and Inference in General Bunching Designs</div>
-    <a href="https://arxiv.org/abs/2411.03625">[arxiv]</a></div>
-
-  <div class="paper">
-    <div class="title">SLIM: Stochastic Learning and Inference in Overidentified Models</div>
-    with Xiaohong Chen, Min Seong Kim, Sokbae Lee, and Myung Hwan Seo &middot; <a href="https://arxiv.org/abs/2510.20996">[arxiv]</a></div>
-  
-  <div class="paper">
-    <div class="title">Empirical Bayes Estimation of Heterogeneous Coefficient Models</div>
-    with Sokbae Lee and Serena Ng &middot; <a href="https://arxiv.org/abs/2601.07059">[arxiv]</a></div>
-
-   
 <!-- <div class="paper">
     <div class="title">[Title]</div>
     <div class="meta">[Job market paper] &middot; <a href="files/jmp.pdf">PDF</a></div>
@@ -86,25 +135,66 @@
       [Abstract]
     </p>
   </div> -->
-  
-  </div>
-  
-  <h2>Publications</h2>
+
+    <h2>Working Papers</h2>
+
+    <div class="paper">
+      <h3><a href="https://arxiv.org/abs/2411.03625">Identification and Inference in General Bunching Designs</a></h3>
+      <p class="links"><a href="https://arxiv.org/abs/2411.03625">arXiv</a></p>
+    </div>
+
+    <div class="paper">
+      <h3><a href="https://arxiv.org/abs/2510.20996">SLIM: Stochastic Learning and Inference in Overidentified Models</a></h3>
+      <p class="meta">with Xiaohong Chen, Min Seong Kim, Sokbae Lee, and Myung Hwan Seo</p>
+      <p class="links"><a href="https://arxiv.org/abs/2510.20996">arXiv</a></p>
+    </div>
+
+    <div class="paper">
+      <h3><a href="https://arxiv.org/abs/2601.07059">Empirical Bayes Estimation of Heterogeneous Coefficient Models</a></h3>
+      <p class="meta">with Sokbae Lee and Serena Ng</p>
+      <p class="links"><a href="https://arxiv.org/abs/2601.07059">arXiv</a></p>
+    </div>
+
+    <h2>Publications</h2>
 
   <!-- <div class="paper">
     <div class="title">[Publication title]</div>
     <div class="meta">[Journal, Year] &middot; with [coauthors] &middot; <a href="#">link</a></div>
   </div> -->
-  <div class="paper">
-    <div class="title">Inference for Parameters Identified by Conditional Moment Restrictions Using a Penalized Bierens Maximum Statistic</div>
-    <div class="meta"><i>Review of Economics and Statistics</i>, 2025 &middot; with Xiaohong Chen, Sokbae Lee, and Myung Hwan Seo &middot; <a href="https://arxiv.org/abs/2008.11140">[arxiv]</a></div>
-  </div>
 
-  <div class="paper">
-    <div class="title">Stochastic Approximation to Generalized Method of Moments</div>
-    <div class="meta"><i>Journal of Financial Econometrics</i>, 2025 &middot; with Xiaohong Chen, Sokbae Lee, Yuan Liao, Myung Hwan Seo, and Youngki Shin &middot; <a href="https://arxiv.org/abs/2308.13564">[arxiv]</a></div>
-  </div>
-  
+    <div class="paper">
+      <h3><a href="https://arxiv.org/abs/2008.11140">Inference for Parameters Identified by Conditional Moment Restrictions Using a Penalized Bierens Maximum Statistic</a></h3>
+      <p class="meta">with Xiaohong Chen, Sokbae Lee, and Myung Hwan Seo</p>
+      <p class="meta"><em>Review of Economics and Statistics</em>, 2025</p>
+      <p class="links"><a href="https://arxiv.org/abs/2008.11140">arXiv</a></p>
+    </div>
+
+    <div class="paper">
+      <h3><a href="https://arxiv.org/abs/2308.13564">Stochastic Approximation to Generalized Method of Moments</a></h3>
+      <p class="meta">with Xiaohong Chen, Sokbae Lee, Yuan Liao, Myung Hwan Seo, and Youngki Shin</p>
+      <p class="meta"><em>Journal of Financial Econometrics</em>, 2025</p>
+      <p class="links"><a href="https://arxiv.org/abs/2308.13564">arXiv</a></p>
+    </div>
+  </main>
+
 </div>
+<script>
+  (function () {
+    var root = document.documentElement;
+    var buttons = document.querySelectorAll(".theme-toggle button");
+    function mark() {
+      var cur = root.getAttribute("data-theme");
+      buttons.forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.set === cur ? "true" : "false"); });
+    }
+    buttons.forEach(function (b) {
+      b.addEventListener("click", function () {
+        root.setAttribute("data-theme", b.dataset.set);
+        try { localStorage.setItem("theme", b.dataset.set); } catch (e) {}
+        mark();
+      });
+    });
+    mark();
+  })();
+</script>
 </body>
 </html>
