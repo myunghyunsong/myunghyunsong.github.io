@@ -63,13 +63,13 @@
     <div class="meta">Job market paper</div>
     <div class="abstract">
       <p>
-        This paper proposes a two-stage procedure for judge instrumental variable (IV) designs with multiple treatments, estimating the effect of one treatment against another on the cases that could have received either, the margin between the two.
-        The first stage is an unordered treatment assignment model whose returns are the observed case characteristics weighted in the judge's own way, plus an unobserved component.
-        The judge weights and the propensity for each treatment are identified without specifying the distribution of the unobserved components.
-        We estimate the weights and the propensity jointly by sieve maximum likelihood, which is semiparametrically efficient for the weights.
-        The estimates construct the regressors of the second stage, where the mean outcome a treatment would produce at a margin is recovered directly from a single regression among the cases that received it and its derivative in the propensity.
+        This paper proposes a two-stage procedure for judge instrumental variable (IV) designs with multiple treatments, estimating the effect of one treatment against another on the cases at the margin of the two.
+        The first stage is an unordered treatment assignment model in which each latent index is a linear function of the observed case characteristics with judge-specific coefficients, plus an unobserved component.
+        The judge-specific coefficients and the propensity for each treatment are identified without specifying the distribution of the unobserved components.
+        We estimate the coefficients and the propensity jointly by sieve maximum likelihood, which is semiparametrically efficient for the coefficients.
+        The estimates construct the regressors of the second stage, where the mean potential outcome of either treatment at the margin is recovered from one regression and its derivative in that treatment's propensity at a fixed index relative to the third treatment.
         Empirically calibrated Monte Carlo experiments show that the first stage is nearly as precise as a correctly specified parametric benchmark and remains accurate where that benchmark fails.
-        Revisiting a judge IV study of recidivism in Virginia court records, we find that a noncarceral conviction raises both noncarceral and carceral reoffending by less than has been reported, while incarceration raises reoffending by at least as much as a noncarceral conviction does and almost entirely in carceral form, a pattern that holds broadly across case characteristics.
+        Revisiting a judge IV study of recidivism in Virginia court records, we find that a noncarceral conviction raises reoffending by less than has been reported and incarceration raises it by at least as much as a noncarceral conviction does, almost entirely in carceral form and broadly across case characteristics.
       </p>
     </div>
 
