@@ -124,13 +124,24 @@
       <h3>Examiner and Judge Designs with Multiple Treatments and Instruments</h3>
       <details class="abstract">
         <summary>Abstract</summary>
-        <p>Research designs exploiting quasi-random assignment of cases to judges and other examiners to study the effects of the treatments examiners assign are increasingly popular.
+        <p>
+        <!-- Research designs exploiting quasi-random assignment of cases to judges and other examiners to study the effects of the treatments examiners assign are increasingly popular.
         Researchers rely on an instrumental variables (IV) framework to communicate their instruments and assumptions clearly, and the instruments must be valid for the treatment parameter of interest.
         This paper proposes a framework for the effects of one treatment relative to another in examiner designs with multiple treatments.
         For each treatment, we construct an instrument that moves cases only into that treatment and none between the others, by estimating an unordered treatment assignment model with examiner-specific coefficients on case covariates and an unrestricted distribution of the unobserved components.
         Despite this flexibility, we show that these coefficients are identified without treatment-specific covariates that existing methods require.
         Using the instruments so obtained, we identify the parameters of interest and develop estimation and inference procedures for them.
-        The application revisits a recent study of recidivism in the Virginia courts.</p>
+        The application revisits a recent study of recidivism in the Virginia courts. -->
+        Designs exploiting quasi-random assignment of cases to judges and other examiners are increasingly popular.
+Commonly used stringency instruments generally fail to identify pairwise causal effects with multiple unordered treatments.
+        The parameters of interest are the effects for compliers moved between any two treatments, which can be identified with instruments that move cases into one treatment without substitution among the others.
+These designs rarely provide such instruments.
+        We build a discrete choice model in which the same case characteristics enter every treatment's assessment through examiner-specific coefficients, with unobserved heterogeneity identically distributed across examiners.
+The model is identified using the Slutsky symmetry of propensities implied by assessment maximization and additive unobserved components.
+The examiners' predicted assessments provide instruments satisfying these conditions conditional on the case characteristics.
+We develop semiparametric estimators of the treatment effects and establish asymptotic normality for their linear functionals.
+The application revisits a recent study in the Virginia courts and finds different patterns in the effects of noncarceral and carceral convictions on reoffending.
+        </p>
       </details>
     </div>
 
